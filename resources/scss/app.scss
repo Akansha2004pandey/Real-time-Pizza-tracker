@@ -1,0 +1,99 @@
+@import './variables.scss';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
+//semicolon must
+//we can write normal css in scss
+
+body{
+    font-family: 'Lato',sans-serif;
+    -webkit-font-smoothing: antialised;
+    color: black;
+
+
+}
+nav{
+    background:$pure;
+}
+nav li{
+    list-style-type: none;
+    
+}
+nav li a{
+    transition: all .3s ease-in-out;
+    &:hover{      //similar to if else
+        color:$primary;
+        font-weight:700;
+        font-size:22px;
+    }
+    text-decoration: none;
+    font-size:20px;
+    color:black;
+    font-weight:400;
+}
+.hungry1{
+    font-size:30px;
+    color:rgb(86, 49, 6);
+}
+.hungry2{
+    font-size:60px;
+}
+.size{
+    background-color: $secondary;
+}
+.add-to-cart{
+    border:2px solid $primary;
+    color:$primary;
+    transition:$smooth;
+    &:hover{
+        background:$primary;
+        border-color: $pure;
+        color:white;
+        
+    }
+}
+.wrapper{
+    display:grid;
+    grid-template-columns:  repeat(4, minmax(0, 1fr));
+    grid-gap:30px;
+}
+.btn-primary{
+    background:$primary;
+    transition:$smooth;
+    &:hover{
+        background:$primary-hover;
+    }
+
+}
+p{
+    color:$gray;
+}
+a{
+    text-decoration: none;
+}
+.cart{
+    background-color:$secondary;
+    .amount{
+        color:$primary;
+
+    }
+}
+.login{
+    background:$secondary;
+    min-height:calc(100vh - 90px);
+
+
+}
+#cartCounter{
+    color:white;
+    font-weight:700;
+    width:30px;
+    background-color:orangered;
+    border-style:hidden;
+    border-radius:50%;
+    text-align:center;
+    display:inline-block;
+}
+.noty_theme__mint{
+    border-radius:100px!important;
+    padding-left: 8px!important;
+}
