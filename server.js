@@ -9,6 +9,8 @@ const session=require("express-session");
 const flash=require("express-flash");
 const connectMongo= require('connect-mongo');
 const MongoStore = connectMongo(session);
+const passport=require('passport');
+
 
 //database connection
 
@@ -25,6 +27,8 @@ connection.on('error', err => {
 connection.once('open', () => {
     console.log('Database connected...');
 });
+//passport config
+
 //session config 
 //session store
 
@@ -46,6 +50,10 @@ app.use(session({
     //sessions do not work without cookie usually env file is created and variables are stored inside that
     
 }))
+const passportInit=require('./app/config/passport')
+passportInit(passport);
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash());
 var PORT;
 if(process.env.PORT){
@@ -56,6 +64,7 @@ if(process.env.PORT){
 //route
 app.use(express.static('public'));
 app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 // set template engine
 //Global middleware 
 app.use((req,res,next)=>{

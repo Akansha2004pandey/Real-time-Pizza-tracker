@@ -1,6 +1,6 @@
 // model name menu then in database it should be menus
 const mongoose=require('mongoose');
-const Schema=mongoose.Schema
+const Schema=mongoose.Schema;
   //if this is capital letter then it has a class or a constructor function
 
 const menuSchema=new Schema({
